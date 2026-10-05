@@ -1,0 +1,415 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vanessa Joshua Career Portfolio</title></head><body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout concept: follows the supplied Career Portfolio template page by page. Navy cover with gold numbers, then cream pages with ruled cards and dark result panels. Single committed look (navy, gold, cream), so no dark-mode variant. */
+:root {
+  --navy: #16223F;
+  --navy-2: #1F2E55;
+  --gold: #C79A3B;
+  --gold-ink: #8A6516;
+  --cream: #FAF6EC;
+  --card: #FFFFFF;
+  --ink: #16223F;
+  --muted: #5C6578;
+  --rule: #E4DCC8;
+  --on-navy: #E9ECF4;
+  --on-navy-muted: #AEB7CC;
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans: 'Public Sans', 'Helvetica Neue', Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+a { color: inherit; text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+h1, h2, h3, p, ul, dl, dd { margin: 0; padding: 0; }
+ul { list-style: none; }
+.page { padding-inline: 20px; }
+.inner { max-width: 1020px; margin-inline: auto; }
+.eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--gold-ink); }
+
+/* Cover */
+.cover { background: var(--navy); color: var(--on-navy); }
+.cover-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 0; max-width: 1180px; margin-inline: auto; }
+.cover-main { padding: 72px 20px 56px 20px; border-left: 4px solid var(--gold); margin-left: 20px; padding-left: 40px; display: flex; flex-direction: column; gap: 28px; }
+.cover .eyebrow { color: var(--gold); }
+.cover h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(52px, 9vw, 92px); line-height: 0.98; letter-spacing: -0.02em; color: #fff; }
+.role { font-size: 18px; color: var(--gold); }
+.role span { color: var(--on-navy-muted); padding-inline: 8px; }
+.value { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.45; max-width: 560px; border-left: 2px solid var(--gold); padding-left: 20px; color: var(--on-navy); }
+.cover-side { background: var(--navy-2); padding: 72px 28px 40px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.photo { width: 168px; height: 168px; border-radius: 50%; background: #EBDDB8; border: 4px solid var(--gold); display: grid; place-items: center; font-family: var(--serif); font-weight: 700; font-size: 58px; color: var(--navy); }
+.contact { font-size: 15px; display: grid; gap: 6px; width: 100%; color: var(--on-navy); }
+.contact b { color: var(--gold); font-weight: 600; margin-right: 8px; }
+.contact span { overflow-wrap: anywhere; user-select: all; }
+.stats { max-width: 1180px; margin-inline: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,0.18); padding: 36px 20px 20px; margin-top: 8px; }
+.stat { padding-inline: 20px; border-left: 1px solid rgba(255,255,255,0.18); }
+.stat:first-child { border-left: 0; padding-left: 20px; }
+.stat b { display: block; font-family: var(--serif); font-size: 40px; line-height: 1.1; color: var(--gold); font-weight: 700; }
+.stat span { display: block; font-size: 14px; color: var(--on-navy-muted); margin-top: 6px; }
+.sectors { max-width: 1180px; margin-inline: auto; padding: 8px 40px 44px; font-size: 12px; letter-spacing: 0.24em; color: var(--on-navy-muted); text-transform: uppercase; }
+
+/* Top navigation */
+.bar { background: var(--cream); border-bottom: 1px solid var(--rule); }
+.bar .inner { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; padding-block: 14px; flex-wrap: wrap; }
+.bar strong { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 700; }
+.bar nav { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 14px; }
+.bar nav a { color: var(--muted); text-decoration: none; }
+.bar nav a:hover { color: var(--ink); text-decoration: underline; }
+
+/* Sections */
+section.sec { padding-block: 68px 20px; }
+.sec h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(28px, 4vw, 38px); line-height: 1.15; letter-spacing: -0.01em; margin-top: 10px; text-wrap: balance; }
+.sec .lede { color: var(--muted); max-width: 640px; margin-top: 12px; }
+.who { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; margin-top: 36px; align-items: start; }
+.who-text { display: grid; gap: 22px; font-size: 17px; max-width: 520px; }
+.dark-card { background: var(--navy); color: var(--on-navy); border-radius: 14px; padding: 28px; display: grid; gap: 22px; }
+.dark-card .eyebrow { color: var(--gold); }
+.dark-card h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: #fff; margin-top: 6px; }
+.orgs li { display: flex; justify-content: space-between; gap: 16px; padding-block: 10px; border-top: 1px solid rgba(255,255,255,0.14); font-size: 14px; }
+.orgs li:first-child { border-top: 0; }
+.orgs li span { color: var(--on-navy-muted); text-align: right; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills li { background: #EBDDB8; color: var(--navy); border-radius: 999px; padding: 5px 14px; font-size: 13px; font-weight: 700; }
+.quals { font-size: 14px; color: var(--on-navy); display: grid; gap: 6px; }
+.toolkit { margin-top: 44px; }
+.toolkit ul { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.toolkit li { border: 1.5px solid var(--gold); border-radius: 999px; padding: 5px 18px; font-size: 14px; background: var(--card); }
+.caps { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; margin-top: 16px; }
+.cap { background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 22px; display: grid; gap: 8px; align-content: start; }
+.cap h3 { font-size: 15px; font-weight: 700; display: flex; gap: 10px; align-items: center; }
+.cap h3::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); flex: none; }
+.cap p { font-size: 14px; color: var(--muted); }
+
+/* Case studies */
+.group { margin-top: 44px; }
+.group > p { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--muted); margin-bottom: 16px; }
+.case { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 26px; display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 28px; margin-bottom: 20px; }
+.case .org { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-ink); font-weight: 700; }
+.case h3 { font-family: var(--serif); font-size: 23px; line-height: 1.25; font-weight: 700; margin: 8px 0 18px; text-wrap: balance; }
+.case dl { display: grid; gap: 14px; }
+.case .row { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 16px; font-size: 15px; }
+.case dt { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; padding-top: 3px; }
+.case dd { color: #2B3550; }
+.case .link { display: inline-block; margin-top: 18px; font-size: 14px; font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--gold); text-decoration: none; padding-bottom: 1px; }
+.case .link:hover { background: #F4EBD2; }
+.result { background: var(--navy); color: var(--on-navy); border-radius: 10px; padding: 24px 22px; display: grid; gap: 20px; align-content: center; }
+.result div + div { border-top: 1px solid rgba(255,255,255,0.18); padding-top: 18px; }
+.result b { display: block; font-family: var(--serif); font-size: 36px; line-height: 1.05; color: var(--gold); }
+.result span { display: block; font-size: 13px; color: var(--on-navy-muted); margin-top: 6px; line-height: 1.4; }
+.extras { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 8px; }
+.extra { border: 1px solid var(--rule); border-radius: 12px; padding: 20px 22px; background: var(--card); }
+.extra .org { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-ink); font-weight: 700; }
+.extra h3 { font-family: var(--serif); font-size: 19px; margin: 6px 0 6px; }
+.extra p { font-size: 14px; color: var(--muted); }
+.fine { font-size: 13px; color: var(--muted); margin-top: 20px; max-width: 700px; }
+
+/* How I work */
+.work { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 12px 40px; margin-top: 30px; }
+.principle { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 4px 12px; padding-block: 18px; border-top: 1px solid var(--rule); }
+.principle .n { font-family: var(--serif); font-size: 30px; color: var(--gold); font-weight: 600; grid-row: span 2; line-height: 1.1; }
+.principle h3 { font-family: var(--serif); font-size: 20px; }
+.principle p { color: var(--muted); font-size: 15px; }
+
+/* Heading */
+.roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 28px; }
+.roles li { background: var(--navy); color: #fff; border-radius: 10px; padding: 16px 18px; font-weight: 600; font-size: 15px; border-bottom: 3px solid var(--gold); }
+.plan { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 16px; }
+.step { background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 22px; display: grid; gap: 6px; }
+.step b { font-family: var(--serif); font-size: 36px; color: var(--gold); line-height: 1; }
+.step h3 { font-size: 16px; font-weight: 700; }
+.step p { font-size: 14px; color: var(--muted); }
+.sub { margin-top: 44px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--gold-ink); }
+
+/* Closing */
+.close { background: var(--navy); color: var(--on-navy); margin-top: 72px; }
+.close .inner { padding-block: 56px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.close q { font-family: var(--serif); font-style: italic; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.3; color: #fff; quotes: "\201C" "\201D"; }
+.close .contact { justify-items: start; }
+.foot { padding-block: 22px 36px; font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .cover-grid { grid-template-columns: 1fr; }
+  .cover-main { padding: 48px 20px 36px 24px; margin-left: 16px; }
+  .cover-side { padding: 32px 24px; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
+  .photo { width: 112px; height: 112px; font-size: 40px; }
+  .contact { width: auto; flex: 1 1 220px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
+  .stat:nth-child(3) { border-left: 0; }
+  .sectors { padding-inline: 24px; line-height: 2; }
+  .who { grid-template-columns: 1fr; gap: 32px; }
+  .case { grid-template-columns: 1fr; }
+  .result { grid-template-columns: 1fr 1fr; }
+  .result div + div { border-top: 0; padding-top: 0; border-left: 1px solid rgba(255,255,255,0.18); padding-left: 20px; }
+  .close .inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .case .row { grid-template-columns: 1fr; gap: 2px; }
+  .case { padding: 20px; }
+}
+</style>
+
+<header class="cover" id="top">
+  <div class="cover-grid">
+    <div class="cover-main">
+      <p class="eyebrow">Career portfolio</p>
+      <h1>Vanessa<br>Joshua</h1>
+      <p class="role">Project Management and PMO<span>|</span>Agile Delivery, Governance and Change</p>
+      <p class="value">I turn complex projects into clear plans, visible trackers and steady delivery, with governance that keeps stakeholders aligned.</p>
+    </div>
+    <div class="cover-side">
+      <div class="photo" role="img" aria-label="Initials VJ">VJ</div>
+      <div class="contact">
+        <p><b>E</b><span>folashekemj@gmail.com</span></p>
+        <p><b>in</b><a href="https://www.linkedin.com/in/folashekemijoshua" target="_blank" rel="noopener" style="overflow-wrap:anywhere">linkedin.com/in/folashekemijoshua</a></p>
+        <p><b>Based in</b>United Kingdom</p>
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>2</b><span>Scrum certifications (SMC and SFC)</span></div>
+    <div class="stat"><b>6</b><span>case studies, each with a plan, risk log and retrospective</span></div>
+    <div class="stat"><b>30</b><span>user stories across 10 epics, delivered in a 15-day simulated healthcare IT programme</span></div>
+    <div class="stat"><b>100%</b><span>ticket resolution rate on the CanTel Connect Agile project</span></div>
+  </div>
+  <p class="sectors">Healthcare · Telecoms · Agriculture · Marketing</p>
+</header>
+
+<div class="bar">
+  <div class="inner page">
+    <strong>Vanessa Joshua Career Portfolio</strong>
+    <nav aria-label="Sections">
+      <a href="#who">Who I am</a>
+      <a href="#work">Selected work</a>
+      <a href="#how">How I work</a>
+      <a href="#next">Where I am heading</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<main class="page">
+  <div class="inner">
+
+    <section class="sec" id="who" aria-labelledby="who-h">
+      <p class="eyebrow">01 · Who I am</p>
+      <h2 id="who-h">I make projects visible and keep them moving</h2>
+      <div class="who">
+        <div class="who-text">
+          <p>I am a project professional with a communications and digital marketing background, based in the UK. I plan the work, track it and report on it, so teams and stakeholders always know where things stand.</p>
+          <p>My strength is governance without the red tape: clear owners, a risk log that gets reviewed every week, and status updates people actually read.</p>
+          <p>I moved into project management from communications and PR. That is why I write plain updates and notice when a message, not just a task, is slipping.</p>
+        </div>
+        <div class="dark-card">
+          <div>
+            <p class="eyebrow">Where I have worked</p>
+            <h3>Organisations</h3>
+            <ul class="orgs" style="margin-top:10px">
+              <li>Amdari <span>Project Manager</span></li>
+              <li>Spectrum Prints Link</li>
+              <li>Integrated Indigo Ltd.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow">Credentials</p>
+            <h3>Certified and qualified</h3>
+            <ul class="pills" style="margin-top:12px">
+              <li>Scrum Master Certified (SMC)</li>
+              <li>Scrum Fundamentals Certified (SFC)</li>
+            </ul>
+            <div class="quals" style="margin-top:14px">
+              <p>MA Digital and Visual Communications (Merit), University of Wolverhampton</p>
+              <p>BSc Mass Communication and Media Technology (First Class Honours), Lead City University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toolkit">
+        <p class="eyebrow">Toolkit</p>
+        <ul aria-label="Tools">
+          <li>Trello</li><li>Power BI</li><li>Excel</li><li>Notion</li><li>ClickUp</li><li>Miro</li>
+        </ul>
+      </div>
+
+      <p class="eyebrow" style="margin-top:48px">What I bring</p>
+      <div class="caps">
+        <div class="cap"><h3>Project coordination</h3><p>Plans, schedules, backlogs and weekly check-ins that keep work moving and deadlines visible.</p></div>
+        <div class="cap"><h3>Agile and Scrum</h3><p>Sprint planning, boards, burndown charts and retros, backed by Scrum Master certification.</p></div>
+        <div class="cap"><h3>Governance and PMO</h3><p>Steering committees, RACI matrices, stage gates and RAG status reporting.</p></div>
+        <div class="cap"><h3>Change and process improvement</h3><p>Mapping the current process, fixing what breaks and bringing people with the change using ADKAR.</p></div>
+        <div class="cap"><h3>Risk and issue tracking</h3><p>RAID logs with named owners and dates, reviewed every week and escalated when blocked.</p></div>
+        <div class="cap"><h3>Reporting and trackers</h3><p>Excel trackers, status reports and simple Power BI dashboards that show progress at a glance.</p></div>
+      </div>
+    </section>
+
+    <section class="sec" id="work" aria-labelledby="work-h">
+      <p class="eyebrow">02 · Selected work</p>
+      <h2 id="work-h">Six projects, from programmes to process fixes</h2>
+      <p class="lede">Every project here is practice or simulated work. Figures marked simulated are targets and results I set within the scenario, not client data.</p>
+
+      <div class="group">
+        <p>Programmes and platforms</p>
+
+        <article class="case">
+          <div>
+            <p class="org">Amdari · Simulated programme</p>
+            <h3>Doubling scope on a hospital group's EMR without losing the plan</h3>
+            <dl>
+              <div class="row"><dt>Challenge</dt><dd>A hospital group with 18 hospitals and 42 outpatient clinics needed one unified electronic medical record. Mid-project, scope grew from 5 epics to 10.</dd></div>
+              <div class="row"><dt>What I did</dt><dd>I wrote the product requirements, user story registers, MVP workflow diagrams and acceptance criteria registers, and built a product analytics dashboard.</dd></div>
+              <div class="row"><dt>Outcome</dt><dd>Delivered 30 user stories across 10 epics inside the 15-day programme, up from 15 stories at the start.</dd></div>
+            </dl>
+          </div>
+          <div class="result">
+            <div><b>30</b><span>user stories delivered, up from 15</span></div>
+            <div><b>10</b><span>epics, up from 5 mid-project</span></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div>
+            <p class="org">CanTel Connect · Practice project</p>
+            <h3>Tracking every customer ticket through to resolution</h3>
+            <dl>
+              <div class="row"><dt>Challenge</dt><dd>A telecoms customer service team needed one tracker so no ticket could be lost between agents.</dd></div>
+              <div class="row"><dt>What I did</dt><dd>I ran it as an Agile project on Trello and built the full project pack: business case, project charter, RAID log, Gantt chart, KPI log, Power BI dashboard and a Google Slides presentation.</dd></div>
+              <div class="row"><dt>Outcome</dt><dd>Every ticket in the project was resolved, a 100% resolution rate.</dd></div>
+            </dl>
+          </div>
+          <div class="result">
+            <div><b>100%</b><span>ticket resolution rate</span></div>
+            <div><b>7</b><span>project pack documents built</span></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div>
+            <p class="org">Brightloop and Solace Health · Simulated</p>
+            <h3>Onboarding 12 clinics in 8 weeks under PMO governance</h3>
+            <dl>
+              <div class="row"><dt>Challenge</dt><dd>Four workstreams (technical integration, data migration, training and legal sign-off) had to land together for a 12-clinic network inside 8 weeks.</dd></div>
+              <div class="row"><dt>What I did</dt><dd>I set up a steering committee, a working group and five stage-gate reviews, with a RACI matrix, a weekly RAG status report, a RAID log and a change-control process.</dd></div>
+              <div class="row"><dt>Outcome</dt><dd>Simulated result: all 12 clinics live in week 8 with no critical defects. The stage gates caught a late legal sign-off early enough to escalate.</dd></div>
+            </dl>
+            <a class="link" href="solace%20PMO%20Governance.pdf" target="_blank" rel="noopener">View case study</a>
+          </div>
+          <div class="result">
+            <div><b>12</b><span>clinics live in week 8 (simulated)</span></div>
+            <div><b>0</b><span>critical defects at go-live (simulated)</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="group">
+        <p>Change, campaigns and tools</p>
+
+        <article class="case">
+          <div>
+            <p class="org">Loom and Co Creative · Simulated</p>
+            <h3>Cutting late approvals from 35% to 8% at a creative agency</h3>
+            <dl>
+              <div class="row"><dt>Challenge</dt><dd>Feedback was scattered across Slack, DMs and email, so edits were lost and about 35% of approvals ran late.</dd></div>
+              <div class="row"><dt>What I did</dt><dd>I mapped the current process, designed one approval workflow with named owners and a logged sign-off, and planned the rollout using ADKAR, with a stakeholder map and resistance tracker.</dd></div>
+              <div class="row"><dt>Outcome</dt><dd>Simulated result: late approvals fell to 8% and the average approval cycle halved from 5.2 days to 2.6 days within 60 days.</dd></div>
+            </dl>
+            <a class="link" href="change%20Management.pdf" target="_blank" rel="noopener">View case study</a>
+          </div>
+          <div class="result">
+            <div><b>35% to 8%</b><span>late approvals (simulated)</span></div>
+            <div><b>2.6 days</b><span>average approval cycle, from 5.2 (simulated)</span></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div>
+            <p class="org">Verdae · Simulated</p>
+            <h3>Launching a skincare serum in two sprints</h3>
+            <dl>
+              <div class="row"><dt>Challenge</dt><dd>A fictional skincare brand needed a 5,000-person waitlist and 1,200 pre-orders from a four-week launch with a small team.</dd></div>
+              <div class="row"><dt>What I did</dt><dd>I ran the campaign as two two-week Scrum sprints, building the backlog, facilitating planning, check-ins, review and retro, and tracking progress on burndown charts. A Sprint 1 retro fix improved Sprint 2's pace.</dd></div>
+              <div class="row"><dt>Outcome</dt><dd>Simulated result: both sprints delivered their full scope on time and both targets were beaten.</dd></div>
+            </dl>
+            <a class="link" href="verdae%20Serum%20launch.pdf" target="_blank" rel="noopener">View case study</a>
+          </div>
+          <div class="result">
+            <div><b>5,380</b><span>waitlist signups against a 5,000 target (simulated)</span></div>
+            <div><b>1,340</b><span>pre-orders against a 1,200 target (simulated)</span></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div>
+            <p class="org">Fernwood Studio · Simulated</p>
+            <h3>Moving 612 tasks off a spreadsheet with none lost</h3>
+            <dl>
+              <div class="row"><dt>Challenge</dt><dd>A 15-person agency had outgrown its shared task sheet, with overwritten rows, no reminders and three missed client deliverables in a quarter.</dd></div>
+              <div class="row"><dt>What I did</dt><dd>I planned the move to ClickUp: requirements, data mapping, line-by-line count checks, role-based training and a two-week parallel run before go-live.</dd></div>
+              <div class="row"><dt>Outcome</dt><dd>Simulated result: all 612 tasks migrated and verified, with 93% of the team logging work in ClickUp by week 6.</dd></div>
+            </dl>
+            <a class="link" href="fernwood-clickup.pdf" target="_blank" rel="noopener">View case study</a>
+          </div>
+          <div class="result">
+            <div><b>612</b><span>tasks migrated, none lost (simulated)</span></div>
+            <div><b>93%</b><span>team adoption by week 6 (simulated)</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="group">
+        <p>Also</p>
+        <div class="extras">
+          <div class="extra"><p class="org">Amdari · Fenland Fresh Growers</p><h3>Co-led a four-person team</h3><p>Produced the project charter, governance charter, RAID log, work breakdown structure, KPI review and steering committee decks for a digital farm and supply chain transformation programme.</p></div>
+          <div class="extra"><p class="org">CircularWorks · Simulated</p><h3>Project CIRCULAR UK feasibility study</h3><p>Assessed a digitally enabled resource-recovery model, covering waste lifecycle mapping, facility and quality requirements, and a business case ending in a Go/No-Go recommendation.</p></div>
+        </div>
+        <p class="fine">Companion Excel trackers (stakeholder register, RACI, RAID log, weekly status) exist for the change management and PMO governance projects and are available on request.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="how" aria-labelledby="how-h">
+      <p class="eyebrow">03 · How I work</p>
+      <h2 id="how-h">Four habits that show up in every project</h2>
+      <div class="work">
+        <div class="principle"><span class="n">01</span><h3>Make progress visible</h3><p>RAG status reports, burndown charts and shared trackers mean nobody has to ask where things stand.</p></div>
+        <div class="principle"><span class="n">02</span><h3>Agree who owns what</h3><p>A RACI and a clear sign-off step for every decision, so work does not stall waiting for an owner.</p></div>
+        <div class="principle"><span class="n">03</span><h3>Log risks early</h3><p>A RAID log with owners and dates, reviewed every week, with escalation to the steering group when something is blocked.</p></div>
+        <div class="principle"><span class="n">04</span><h3>Make the change stick</h3><p>Training by role, a parallel run and a 30-day check-in, so the new way of working lasts after go-live.</p></div>
+      </div>
+    </section>
+
+    <section class="sec" id="next" aria-labelledby="next-h">
+      <p class="eyebrow">04 · Where I am heading</p>
+      <h2 id="next-h">Ready to deliver projects end to end</h2>
+      <p class="lede">My next step is a full-time project management, coordination or PMO role. I already plan, govern and report on projects, and I am ready to do it on live work with a team.</p>
+      <ul class="roles" aria-label="Target roles">
+        <li>Project Coordinator</li><li>PMO Analyst</li><li>Junior Project Manager</li><li>Communications Officer</li>
+      </ul>
+      <p class="sub">What you can expect in my first 90 days</p>
+      <div class="plan">
+        <div class="step"><b>30</b><h3>Listen and map</h3><p>Meet the team and stakeholders, learn the tools, and read every plan, risk log and open action.</p></div>
+        <div class="step"><b>60</b><h3>Make it visible</h3><p>Take ownership of status reports, trackers and meeting actions, delivered on time every week.</p></div>
+        <div class="step"><b>90</b><h3>Improve and embed</h3><p>Agree one process improvement with the team, put it in place and measure the difference it makes.</p></div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="close" id="contact">
+  <div class="inner page">
+    <q>Let's talk about how I can keep your projects visible and on track.</q>
+    <div class="contact">
+      <p style="font-family:var(--serif); font-size:22px; color:#fff">Vanessa Joshua</p>
+      <p><b>E</b><span>folashekemj@gmail.com</span></p>
+        <p><b>in</b><a href="https://www.linkedin.com/in/folashekemijoshua" target="_blank" rel="noopener" style="overflow-wrap:anywhere">linkedin.com/in/folashekemijoshua</a></p>
+      <p><b>Based in</b>United Kingdom</p>
+    </div>
+  </div>
+</footer>
+<div class="page">
+  <div class="inner foot">
+    <span>Folashekemi Vanessa Joshua</span>
+    <span>Projects marked simulated are practice work with illustrative figures.</span>
+  </div>
+</div>
+</body></html>
